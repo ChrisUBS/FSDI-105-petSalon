@@ -10,44 +10,47 @@ let petSalon = {
     phone:"666-555-7777"
 }
 
-// Change console.log to document.write later
-console.log(petSalon);
-
-// Creating the pets
-let pet1 = {
-    name: "Scooby",
-    age: 60,
-    gender: "Male",
-    breed: "Dane",
-    service: "Grooming"
-}
-
-let pet2 = {
-    name: "Scrappy",
-    age: 50,
-    gender: "Male",
-    breed: "Mixed",
-    service: "Vaccines"
-}
-
-let pet3 = {
-    name: "Velma",
-    age: 40,
-    gender: "Female",
-    breed: "Canarian",
-    service: "Nails"
-}
-
-pets.push(pet1, pet2, pet3);
-console.log(pets);
-
-function displayNames() {
-    let petsList = document.getElementById("petsList");
-    petsList.innerHTML = `We have ${pets.length} pets in the salon`;
-
-    for (let i = 0; i < pets.length; i++) {
-        petsList.innerHTML += `<p>${pets[i].name}</p>`;
+// Pet class
+class Pet {
+    // Constructor
+    constructor (name, age, gender, breed, service) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.breed = breed;
+        this.service = service;
     }
 }
 
-displayNames();
+// Create the variables
+let inputName = document.getElementById("name");
+let inputAge = document.getElementById("age");
+let inputGender = document.getElementById("gender");
+let inputBreed = document.getElementById("breed");
+let inputService = document.getElementById("services");
+
+function register() {
+    // Create new pet
+    let thePet = new Pet(inputName.value, inputAge.value, inputGender.value, inputBreed.value, inputService.value);
+    pets.push(thePet);
+    console.log(pets);
+    // clearForm();
+}
+
+function clearForm() {
+    inputName.value = "";
+    inputAge.value = "";
+    inputGender.value = "";
+    inputBreed.value = "";
+    inputService.value = "";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Create new pets
+    let pet1 = new Pet("Scooby", 60, "Male", "Dane", "grooming");
+    let pet2 = new Pet("Scrappy", 20, "Male", "Mixed", "vaccines");
+    let pet3 = new Pet("Velma", 40, "Female", "Canarian", "nails");
+    pets = [pet1, pet2, pet3];
+    
+    console.log(pets);
+});
