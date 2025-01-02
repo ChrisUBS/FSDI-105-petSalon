@@ -1,0 +1,172 @@
+/* Colors */
+:root {
+    --primary-color: #4a90e2; /* Primary blue */
+    --secondary-color: #f5a623; /* Orange yellow */
+    --background-color: #f4f8fb; /* Light background */
+    --text-color: #333; /* General text */
+    --white: #ffffff;
+    --footer-bg: #1c3c57; /* Footer's dark background */
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utilities */
+.bold {
+    font-weight: bold;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+}
+
+header img {
+    height: 4rem;
+    margin: 1rem;
+}
+
+header nav {
+    margin: 1rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600;
+    margin: 0 0.5rem;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Hero Section */
+.hero {
+    margin: 1rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 1rem;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hero .btn:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Ubication Section */
+.ubication {
+    text-align: center;
+    margin: 2rem 1rem;
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ubication h2 {
+    color: var(--primary-color);
+    padding: 2rem;
+    margin: 0;
+}
+
+#map {
+    margin-left: auto;
+    margin-right: auto;
+    height: 50vh;
+    width: 100%;
+    /* border-radius: 15px; */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--footer-bg);
+    color: var(--white);
+    padding: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer .social-media i {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1.5px solid var(--white);
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer .social-media i:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
