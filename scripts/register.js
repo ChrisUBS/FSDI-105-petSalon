@@ -2,16 +2,6 @@
 let pets = []; // Empty array to store pets
 let totalPets = 0; // Total pets registered
 
-// Object literal
-let petSalon = {
-    name: "The Fashion Pet",
-    address: {
-        street: "Palm Ave",
-        zip:"22333"
-    },
-    phone:"666-555-7777"
-}
-
 // Pet class
 class Pet {
     // Constructor

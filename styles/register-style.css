@@ -85,6 +85,10 @@ header nav a:hover {
         flex-direction: column;
         text-align: center;
     }
+
+    header nav a:first-child {
+        display: none;
+    }
 }
 
 /* Form Styling */

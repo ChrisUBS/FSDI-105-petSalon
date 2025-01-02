@@ -67,6 +67,10 @@ header nav a:hover {
         flex-direction: column;
         text-align: center;
     }
+
+    header nav a:first-child {
+        display: none;
+    }
 }
 
 /* Hero Section */
@@ -120,7 +124,7 @@ header nav a:hover {
 
 .ubication h2 {
     color: var(--primary-color);
-    padding: 2rem;
+    padding-top: 1rem;
     margin: 0;
 }
 
