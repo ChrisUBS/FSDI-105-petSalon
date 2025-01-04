@@ -66,6 +66,28 @@ function display() {
     tbody.innerHTML = row;
 }
 
+function displayPets() {
+    let cardsSection = document.getElementById("pets");
+    let result = "";
+    
+    for (let i = 0; i < pets.length; i++) {
+        let pet = pets[i];
+
+        result += `
+            <div id="${i}" class="card col-3 mx-2">
+                <div class="card-body">    
+                    <h5 class="card-title>${pet.name} - <span class="text-secondary"> ${pet.service}</span></h5>
+                    <h6 class="card-subittle mb-2 text-body-secondary">${pet.breed}</h6>
+                    <p class="card-text">${pet.gender}, ${pet.age}</p>
+                    <button class="btn btn-danger bt-sm" onclick="deletePet(${i})">Delete</button>    
+                </div>
+            </div>
+        `;
+    }
+
+    cardsSection.innerHTML = result;
+}
+
 // Function to calculate the average age of the pets
 function averageAge() {
     let sum = 0;
@@ -86,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Display pets
     display();
+    displayPets();
 });
 
 // Stop form submission
