@@ -26,7 +26,7 @@ let inputService = document.getElementById("services");
 // Register function
 function register() {
 
-    if(inputName.value === "" || inputAge.value === "" || inputGender.value === "" || inputBreed.value === "" || inputService.value === "") {
+    if(inputName.value === "" || inputAge.value === "" || inputGender.value === "" || inputBreed.value === "" || inputType.value === "" || inputService.value === "") {
         // alert("Please complete the form");
         return;
     }
@@ -36,8 +36,7 @@ function register() {
     pets.push(thePet);
 
     // Clear form and display pets
-    clearForm();
-    // display();
+    // clearForm();
     displayRow();
 }
 
@@ -76,33 +75,34 @@ function displayRow() {
     for (let i = 0; i < pets.length; i++) {
         let pet = pets[i];
 
+        // result += `
+        //     <tr id="${i}">
+        //         <td scope="row">${i + 1}</td>
+        //         <td>${pet.name}</td>
+        //         <td>${pet.age}</td>
+        //         <td>${pet.gender}</td>
+        //         <td>${pet.breed}</td>
+        //         <td>${pet.type}</td>
+        //         <td>${pet.service}</td>
+        //         <td><button class="btn btn-danger btn-sm" onclick="deletePet(${i})">Delete</button></td>
+        //     </tr>
+        // `;
+
         result += `
-            <tr id="${i}">
-                <td scope="row">${i + 1}</td>
-                <td>${pet.name}</td>
-                <td>${pet.age}</td>
-                <td>${pet.gender}</td>
-                <td>${pet.breed}</td>
-                <td>${pet.type}</td>
-                <td>${pet.service}</td>
-                <td><button class="btn btn-danger btn-sm" onclick="deletePet(${i})">Delete</button></td>
-            </tr>
+            <div id="${i}" class="card col-12 col-sm-6 col-md-4 col-lg-2 mx-2 mb-2 text-center fixed-card">
+                <div class="card-body">    
+                    <h5 class="card-title">${pet.name}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">${pet.service}</h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">${pet.breed}, ${pet.type}</h6>
+                    <p class="card-text">${pet.gender}, ${pet.age}</p>
+                    <button class="btn btn-danger btn-sm" onclick="deletePet(${i})">Delete</button>    
+                </div>
+            </div>
         `;
 
-        displayInfo();
-
-        // result += `
-        //     <div id="${i}" class="card col-3 mx-2">
-        //         <div class="card-body">    
-        //             <h5 class="card-title>${pet.name} - <span class="text-secondary"> ${pet.service}</span></h5>
-        //             <h6 class="card-subittle mb-2 text-body-secondary">${pet.breed}</h6>
-        //             <p class="card-text">${pet.gender}, ${pet.age}</p>
-        //             <button class="btn btn-danger bt-sm" onclick="deletePet(${i})">Delete</button>    
-        //         </div>
-        //     </div>
-        // `;
     }
-
+    
+    displayInfo();
     cardsSection.innerHTML = result;
 }
 
@@ -110,11 +110,11 @@ function displayInfo() {
     let totalPets = document.getElementById("total");
     let dogCounter = document.getElementById("dTotal");
     let catCounter = document.getElementById("cTotal");
-    let fishCounter = document.getElementById("fTotal");
+    let birdCounter = document.getElementById("bTotal");
 
     let dog = 0;
     let cat = 0;
-    let fish = 0;
+    let bird = 0;
 
     totalPets.innerHTML = pets.length;
     console.log("total: ", pets.length);
@@ -131,14 +131,14 @@ function displayInfo() {
             cat++;
         }
 
-        if (pet.type === "Fish") {
-            fish++;
+        if (pet.type === "Bird") {
+            bird++;
         }
     }
 
     dogCounter.innerHTML = dog;
     catCounter.innerHTML = cat;
-    fishCounter.innerHTML = fish;
+    birdCounter.innerHTML = bird;
 }
 
 function deletePet(index) {
@@ -149,7 +149,6 @@ function deletePet(index) {
     pets.splice(index, 1);
 
     displayRow();
-    displayInfo();
 }
 
 // Function to calculate the average age of the pets
@@ -170,8 +169,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let pet3 = new Pet("Velma", 40, "Female", "Canarian", "Cat", "nails");
     pets = [pet1, pet2, pet3];
     
-    // Display pets
-    // display();
+    // Display the pets
     displayRow();
 });
 

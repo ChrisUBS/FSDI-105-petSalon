@@ -161,48 +161,22 @@ button:hover {
     background-color: var(--button-hover);
 }
 
-/* Pets container */
-.pets-container h2 {
+/* Totals */
+.totals {
     text-align: center;
 }
 
-/* Table Styling */
-/* table {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border-radius: 12px;
+/* Cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-thead th {
-    background-color: var(--table-header-bg);
-    color: var(--table-header-text);
-    padding: 12px;
-    text-align: left;
-    font-size: 1rem;
+.fixed-card {
+    min-width: 200px;
+    max-width: 200px;
 }
-
-tbody tr:nth-child(odd) {
-    background-color: var(--row-bg-light);
-}
-
-tbody tr:nth-child(even) {
-    background-color: var(--row-bg-dark);
-}
-
-td {
-    padding: 10px;
-    font-size: 0.95rem;
-    color: var(--text-color);
-}
-
-tbody tr:hover {
-    background-color: rgba(74, 144, 226, 0.1);
-    cursor: pointer;
-} */
 
 /* Footer */
 footer {
