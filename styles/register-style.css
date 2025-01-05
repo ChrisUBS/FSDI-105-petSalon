@@ -167,7 +167,7 @@ button:hover {
 }
 
 /* Table Styling */
-table {
+/* table {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -202,7 +202,7 @@ td {
 tbody tr:hover {
     background-color: rgba(74, 144, 226, 0.1);
     cursor: pointer;
-}
+} */
 
 /* Footer */
 footer {
