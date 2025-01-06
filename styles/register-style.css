@@ -166,18 +166,6 @@ button:hover {
     text-align: center;
 }
 
-/* Cards */
-.cards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.fixed-card {
-    min-width: 200px;
-    max-width: 200px;
-}
-
 /* Footer */
 footer {
     display: flex;

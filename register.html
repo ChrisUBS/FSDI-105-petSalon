@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>GROOMTASTIC - Register</title>
     <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,28 +94,31 @@
             <p>Dog: <span id="dTotal">0</span> | Cat: <span id="cTotal">0</span> | Bird: <span id="bTotal">0</span></p>
         </div>
 
-        <!-- <table class="table table-striped table-borderless">
-            <thead>
-                <tr class="table-dark">
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Breed</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Service</th>
-                    <th scope="col">Action</th>
-                </tr>
+        <div class="notification">
+            <p id="message"></p>
+        </div>
 
-                <tbody id="pets"> -->
+        <div style="overflow-x: auto; max-width: 100%;">
+            <table class="table table-striped table-borderless">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Breed</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="pets">
                     <!-- Dynamic rows go here -->
-                <!-- </tbody>
-            </thead>
-        </table> -->
+                </tbody>
+            </table>
+        </div>
         
     </main>
-    
-    <div class="cards row" id="pets"></div>
 
     <footer>
         <div>Groomtastic Pet Salon</div>
@@ -133,6 +136,7 @@
 
     <!-- Scripts -->
     <script src="scripts/register.js"></script>
+    <script src="scripts/display.js"></script>
 </body>
 
 </html>
