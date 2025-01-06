@@ -1,13 +1,26 @@
 // Variables
 let pets = []; // Empty array to store pets
 let totalPets = 0; // Total pets registered
+let typeDisplay = "table";
 
 // When the page is loaded
 document.addEventListener("DOMContentLoaded", function() {
+    
+    // Add functionality to the buttons
+    document.getElementById("table-btn").addEventListener("click", function() {
+        changeDisplay("table");
+        displayRow();
+    });
+
+    document.getElementById("cards-btn").addEventListener("click", function() {
+        changeDisplay("cards");
+        displayCards();
+    });
+
     // Create new 3 pets
-    let pet1 = new Pet("Scooby", 60, "Male", "Dane", "Dog", "grooming");
-    let pet2 = new Pet("Scrappy", 20, "Male", "Mixed", "Dog", "vaccines");
-    let pet3 = new Pet("Velma", 40, "Female", "Canarian", "Cat", "nails");
+    let pet1 = new Pet("Scooby", 60, "Male", "Dane", "Dog", "grooming", "cash");
+    let pet2 = new Pet("Scrappy", 20, "Male", "Mixed", "Dog", "vaccines", "credit");
+    let pet3 = new Pet("Velma", 10, "Female", "Canarian", "Bird", "nails", "paypal");
     pets = [pet1, pet2, pet3];
     
     // Display the pets
@@ -24,13 +37,14 @@ form.addEventListener('submit', function(event) {
 // Pet class
 class Pet {
     // Constructor
-    constructor (name, age, gender, breed, type, service) {
+    constructor (name, age, gender, breed, type, service, paymentMethod) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.breed = breed;
         this.type = type;
         this.service = service;
+        this.paymentMethod = paymentMethod;
     }
 }
 
@@ -41,22 +55,36 @@ let inputGender = document.getElementById("gender");
 let inputBreed = document.getElementById("breed");
 let inputType = document.getElementById("type");
 let inputService = document.getElementById("services");
+let inputPaymentMethod = document.getElementById("payment-method");
+
+// Change the display type
+function changeDisplay(displayType) {
+    typeDisplay = displayType;
+}
 
 // Register function
 function register() {
 
-    if(inputName.value === "" || inputAge.value === "" || inputGender.value === "" || inputBreed.value === "" || inputType.value === "" || inputService.value === "") {
+    if(inputName.value === "" || inputAge.value === "" || inputGender.value === "" || inputBreed.value === "" || inputType.value === "" || inputService.value === "" || inputPaymentMethod.value === "") {
         // alert("Please complete the form");
         return;
     }
 
     // Create new pet
-    let thePet = new Pet(inputName.value, inputAge.value, inputGender.value, inputBreed.value, inputType.value, inputService.value);
+    let thePet = new Pet(inputName.value, inputAge.value, inputGender.value, inputBreed.value, inputType.value, inputService.value, inputPaymentMethod.value);
     pets.push(thePet);
 
-    // Clear form and display pets
+    // Clear form
     clearForm();
-    displayRow();
+
+    // Display the pets
+    if (typeDisplay === "table") {
+        displayRow();
+    }
+
+    if (typeDisplay === "cards") {
+        displayCards();
+    }
 }
 
 // Clear form function
@@ -71,7 +99,13 @@ function deletePet(index) {
     pets.splice(index, 1);
 
     // Refresh the table
-    displayRow();
+    if (typeDisplay === "table") {
+        displayRow();
+    }
+
+    if (typeDisplay === "cards") {
+        displayCards();
+    }
 
     // Display notification
     let notification = document.getElementById("message");
