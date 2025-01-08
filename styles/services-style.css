@@ -70,12 +70,23 @@ header nav a:hover {
     }
 }
 
+/* Main */
+main {
+    margin-bottom: 8rem;
+}
+
 /* Form */
 .container {
     background-color: var(--input-bg);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
 }
 
 h1 {
@@ -86,14 +97,20 @@ h1 {
 }
 
 /* Footer */
-footer {
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+}
+
+.container-footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: var(--footer-bg);
     color: var(--white);
     padding: 1rem;
-    margin-top: 2rem;
     flex-wrap: wrap;
 }
 
@@ -116,7 +133,7 @@ footer .social-media i:hover {
 }
 
 @media (max-width: 768px) {
-    footer {
+    .container-footer {
         flex-direction: column;
         text-align: center;
     }

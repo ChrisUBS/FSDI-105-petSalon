@@ -1,3 +1,6 @@
+// Initialize services array
+let services = JSON.parse(localStorage.getItem('services')) || [];
+
 // Variables
 let pets = []; // Empty array to store pets
 let totalPets = 0; // Total pets registered
@@ -5,6 +8,14 @@ let typeDisplay = "table";
 
 // When the page is loaded
 document.addEventListener("DOMContentLoaded", function() {
+
+    // Add options to the select element
+    let select = document.getElementById("services");
+    for (let i = 0; i < services.length; i++) {
+        let option = document.createElement("option");
+        option.text = services[i].name;
+        select.add(option);
+    }
     
     // Add functionality to the buttons
     document.getElementById("table-btn").addEventListener("click", function() {
