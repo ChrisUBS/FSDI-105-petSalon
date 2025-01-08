@@ -1,0 +1,123 @@
+/* General Colors */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5a623;
+    --background-color: #f4f8fb;
+    --text-color: #333;
+    --input-bg: #ffffff;
+    --input-border: #ddd;
+    --table-header-bg: #4a90e2;
+    --table-header-text: #ffffff;
+    --row-bg-light: #f9f9f9; 
+    --row-bg-dark: #f4f4f4; 
+    --button-hover: #0056b3; 
+    --white: #ffffff;
+    --footer-bg: #1c3c57;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+}
+
+header img {
+    height: 4rem;
+    margin: 1rem;
+}
+
+header nav {
+    margin: 1rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600;
+    margin: 0 0.5rem;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav a:first-child {
+        display: none;
+    }
+}
+
+/* Form */
+.container {
+    background-color: var(--input-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--footer-bg);
+    color: var(--white);
+    padding: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer .social-media i {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1.5px solid var(--white);
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer .social-media i:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
