@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,40 +9,60 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         .bg-gray {
-            background-color: gray!important;
+            background-color: gray !important;
         }
     </style>
 </head>
+
 <body>
-    
-    <h1>jQuery Practice</h1>
 
-    <p id="red">First paragraph</p>
-    <p id="blue" class="with-border">Second paragraph</p>
-    <p class="bg-tomato">Third paragraph</p>
+    <main>
 
-    <br>
+        <h1>jQuery Practice</h1>
 
-    <div>
-        <input type="text" id="testInput">
-        <button id="registerBtn">Register</button>
-    </div>
-    <br><br>
+        <p id="red">First paragraph</p>
+        <p id="blue" class="with-border">Second paragraph</p>
+        <p class="bg-tomato">Third paragraph</p>
 
-    <div id="results">My results</div>
+        <br>
 
-    <button id="newBtn">Click me!</button>
+        <div>
+            <input type="text" id="testInput">
+            <button id="registerBtn">Register</button>
+        </div>
+        <br><br>
 
-    <br><br>
+        <div id="results">My results</div>
 
-    <h2 id="user-name">Chris</h2>
+        <button id="newBtn">Click me!</button>
 
-    <button class="btn btn-dark" id="show-username">Show username</button>
+        <br><br>
 
-    <button class="btn btn-dark" id="hide-username">Hide username</button>
+        <h2 id="user-name">Chris</h2>
+
+        <button class="btn btn-dark" id="show-username">Show username</button>
+
+        <button class="btn btn-dark" id="hide-username">Hide username</button>
+
+        <form class="d-flex flex-column align-items-center">
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="">Select Category</option>
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+            </select>
+
+            <label for="items">Items:</label>
+            <select id="items">
+                <option value="">Select an Item</option>
+            </select>
+        </form>
+
+    </main>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="scripts/jqueryPractice.js"></script>
 </body>
+
 </html>

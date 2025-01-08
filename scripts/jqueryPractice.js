@@ -66,3 +66,28 @@ function showUsername() {
 }
 
 $('#show-username').on('click', showUsername);
+
+
+// Challenge 1: Change Dropdown Options
+$(document).ready(function () {
+    const options = {
+        fruits: ["Apple", "Banana", "Orange"],
+        vegetables: ["Carrot", "Broccoli", "Spinach"]
+    };
+
+    $('#category').on('change', function () {
+        const selectedCategory = $(this).val();
+        const $itemsDropdown = $('#items');
+
+        // Clean the dropdown
+        $itemsDropdown.empty();
+        $itemsDropdown.append('<option value="">Select an Item</option>');
+
+        // Add the items to the dropdown
+        if (options[selectedCategory]) {
+            options[selectedCategory].forEach(function (item) {
+                $itemsDropdown.append(`<option value="${item.toLowerCase()}">${item}</option>`);
+            });
+        }
+    });
+});
