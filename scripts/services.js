@@ -102,7 +102,7 @@ function displayTable() {
             <tr id="${i}">
                 <td scope="row">${i + 1}</td>
                 <td>${service.name}</td>
-                <td>${service.price}</td>
+                <td>$${service.price}</td>
                 <td>${service.description}</td>
                 <td><button class="btn btn-danger btn-sm delete-btn" data-index="${i}">Delete</button></td>
             </tr>

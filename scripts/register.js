@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let select = document.getElementById("services");
     for (let i = 0; i < services.length; i++) {
         let option = document.createElement("option");
-        option.text = services[i].name;
+        option.text = services[i].name + " - $" + services[i].price;
         select.add(option);
     }
     
@@ -29,13 +29,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Create new 3 pets
-    let pet1 = new Pet("Scooby", 60, "Male", "Dane", "Dog", "grooming", "cash");
-    let pet2 = new Pet("Scrappy", 20, "Male", "Mixed", "Dog", "vaccines", "credit");
-    let pet3 = new Pet("Velma", 10, "Female", "Canarian", "Bird", "nails", "paypal");
+    let pet1 = new Pet("Scooby", 60, "Male", "Dane", "Dog", "grooming - $50", "cash");
+    let pet2 = new Pet("Scrappy", 20, "Male", "Mixed", "Dog", "vaccines - $30", "credit");
+    let pet3 = new Pet("Velma", 10, "Female", "Canarian", "Bird", "nails - $10", "paypal");
     pets = [pet1, pet2, pet3];
     
-    // Display the pets
+    // Display the pets and hide the message
     displayRow();
+    $('#message-register').hide();
 });
 
 function getServices() {
@@ -109,6 +110,25 @@ function register() {
     if (typeDisplay === "cards") {
         displayCards();
     }
+
+    // Display notification
+    let notification = $('#message-register');
+    notification.text("Pet registered successfully!")
+        .css({
+            display: 'block',
+            textAlign: 'center',
+            color: 'green',
+            fontSize: '1.2em',
+            padding: '10px',
+            border: '1px solid green',
+            borderRadius: '5px',
+            margin: '20px auto auto auto'
+        });
+
+    // Hide the notification after a few seconds
+    setTimeout(function () {
+        notification.hide();
+    }, 2000);
 }
 
 // Clear form function
