@@ -38,6 +38,19 @@ document.addEventListener("DOMContentLoaded", function() {
     displayRow();
 });
 
+function getServices() {
+    console.log("Getting services...");
+
+    let services = read();
+    let option = "";
+
+    for (let i = 0; i < services.length; i++) {
+        option += `<option value="${services[i].name}">${services[i].name} - $ ${services[i].price}</option>`;
+    }
+
+    $('#services').html(option);
+}
+
 // Stop form submission
 const form = document.getElementById('register-form');
 form.addEventListener('submit', function(event) {
